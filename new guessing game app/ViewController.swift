@@ -24,22 +24,35 @@ class ViewController: UIViewController {
 
 """
     
+    var guesses = 5
+    var userguess = Int()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        self.view.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
         ruleslabel.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
      ruleslabel.text = rulesLabelText 
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-       
     }
 
     @IBAction func guessButtonpressed(_ sender: Any) {
-    }
-    
+   
+        var guess = Int(userGuessField.text!)!
+        if guess < randomNumber {
+            userFeedBackLabel.text = "your guess was low try again"
+        }  else if guess > randomNumber {
+            userFeedBackLabel.text = "your guess was higher try again"
+        }else{
+            userFeedBackLabel.text = "you win🤩"
 }
 
+      }
+ 
+
+
+
+}
