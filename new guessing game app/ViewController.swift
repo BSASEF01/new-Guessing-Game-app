@@ -58,10 +58,13 @@ class ViewController: UIViewController {
             var guess = Int(userGuessField.text!)!
             if guess < randomNumber {
                 userFeedBackLabel.text = "your guess was low try again"
+                userGuessField.text = ""
             }  else if guess > randomNumber {
                 userFeedBackLabel.text = "your guess was higher try again"
+                userGuessField.text = ""
             }else if guess == randomNumber {
                 userFeedBackLabel.text = "you win🤩"
+                userGuessField.text = ""
                 view.endEditing(true)
             }
         } else  {
